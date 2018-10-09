@@ -217,11 +217,13 @@ final class TabItemView: UIView {
             textLabel.font = UIFont.boldSystemFont(ofSize: 12)
             textLabel.textColor = type.tintColor
             imageView.tintColor = type.tintColor
+            imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         } else {
             // 非選択状態にする
             textLabel.font = UIFont.systemFont(ofSize: 10)
             textLabel.textColor = .darkGray
             imageView.tintColor = .darkGray
+            imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         }
     }
 }
