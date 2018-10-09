@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g4L-wv-OeV">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="vD0-PB-Erg">
+            <objects>
+                <viewController id="g4L-wv-OeV" customClass="MainViewController" customModule="TabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hBS-so-Yy5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzO-87-6Ux">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ohe-dq-0dl" customClass="TabView" customModule="TabBar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="4do-gL-yii"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8U-Aj-GeG">
+                                <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fzO-87-6Ux" firstAttribute="top" secondItem="Ixn-MB-lpg" secondAttribute="top" id="76v-v3-U7a"/>
+                            <constraint firstAttribute="trailing" secondItem="N8U-Aj-GeG" secondAttribute="trailing" id="NnR-Ku-hXu"/>
+                            <constraint firstItem="N8U-Aj-GeG" firstAttribute="leading" secondItem="hBS-so-Yy5" secondAttribute="leading" id="Tkd-3U-dEq"/>
+                            <constraint firstItem="Ixn-MB-lpg" firstAttribute="trailing" secondItem="fzO-87-6Ux" secondAttribute="trailing" id="URp-HA-0db"/>
+                            <constraint firstItem="Ohe-dq-0dl" firstAttribute="bottom" secondItem="Ixn-MB-lpg" secondAttribute="bottom" id="a6q-hr-Yzl"/>
+                            <constraint firstAttribute="bottom" secondItem="N8U-Aj-GeG" secondAttribute="bottom" id="adQ-b6-CYu"/>
+                            <constraint firstItem="N8U-Aj-GeG" firstAttribute="top" secondItem="Ohe-dq-0dl" secondAttribute="bottom" id="akQ-WP-AmH"/>
+                            <constraint firstItem="Ohe-dq-0dl" firstAttribute="top" secondItem="fzO-87-6Ux" secondAttribute="bottom" id="mAV-zR-UfL"/>
+                            <constraint firstItem="fzO-87-6Ux" firstAttribute="leading" secondItem="Ixn-MB-lpg" secondAttribute="leading" id="p7C-w9-Zaq"/>
+                            <constraint firstItem="Ohe-dq-0dl" firstAttribute="leading" secondItem="Ixn-MB-lpg" secondAttribute="leading" id="sda-Xy-ETc"/>
+                            <constraint firstItem="Ohe-dq-0dl" firstAttribute="trailing" secondItem="Ixn-MB-lpg" secondAttribute="trailing" id="tG6-Dv-Puk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ixn-MB-lpg"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="fzO-87-6Ux" id="4Mf-R5-CJs"/>
+                        <outlet property="tabView" destination="Ohe-dq-0dl" id="mdI-r8-nxd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GG-Oi-Zg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388.40579710144931" y="-302.00892857142856"/>
+        </scene>
+    </scenes>
+</document>

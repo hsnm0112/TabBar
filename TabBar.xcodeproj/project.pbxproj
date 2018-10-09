@@ -10,10 +10,21 @@
 		77023555216CE58900B140ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023554216CE58900B140ED /* AppDelegate.swift */; };
 		77023557216CE58900B140ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023556216CE58900B140ED /* ViewController.swift */; };
 		7702355A216CE58900B140ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77023558216CE58900B140ED /* Main.storyboard */; };
-		7702355C216CE58A00B140ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7702355B216CE58A00B140ED /* Assets.xcassets */; };
 		7702355F216CE58A00B140ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7702355D216CE58A00B140ED /* LaunchScreen.storyboard */; };
 		7702356A216CE58B00B140ED /* TabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023569216CE58B00B140ED /* TabBarTests.swift */; };
 		77023575216CE58B00B140ED /* TabBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023574216CE58B00B140ED /* TabBarUITests.swift */; };
+		77023587216CE65E00B140ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023586216CE65E00B140ED /* MainViewController.swift */; };
+		77023589216CE67D00B140ED /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77023588216CE67D00B140ED /* AViewController.swift */; };
+		7702358B216CE68400B140ED /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7702358A216CE68400B140ED /* BViewController.swift */; };
+		7702358D216CE68B00B140ED /* CViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7702358C216CE68B00B140ED /* CViewController.swift */; };
+		7702358F216CE69700B140ED /* DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7702358E216CE69700B140ED /* DViewController.swift */; };
+		77023598216CEDD700B140ED /* AViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77023597216CEDD700B140ED /* AViewController.storyboard */; };
+		7702359A216CEE2000B140ED /* BViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77023599216CEE2000B140ED /* BViewController.storyboard */; };
+		7702359C216CEE2500B140ED /* CViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7702359B216CEE2500B140ED /* CViewController.storyboard */; };
+		7702359E216CEE3200B140ED /* DViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7702359D216CEE3200B140ED /* DViewController.storyboard */; };
+		770235A0216CEF6800B140ED /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7702359F216CEF6800B140ED /* MainViewController.storyboard */; };
+		770235A2216CF40700B140ED /* TabItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 770235A1216CF40700B140ED /* TabItemView.xib */; };
+		770235A4216D12A400B140ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 770235A3216D12A400B140ED /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +49,6 @@
 		77023554216CE58900B140ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77023556216CE58900B140ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77023559216CE58900B140ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7702355B216CE58A00B140ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7702355E216CE58A00B140ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77023560216CE58A00B140ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77023565216CE58B00B140ED /* TabBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +57,18 @@
 		77023570216CE58B00B140ED /* TabBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77023574216CE58B00B140ED /* TabBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUITests.swift; sourceTree = "<group>"; };
 		77023576216CE58B00B140ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77023586216CE65E00B140ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		77023588216CE67D00B140ED /* AViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		7702358A216CE68400B140ED /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		7702358C216CE68B00B140ED /* CViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CViewController.swift; sourceTree = "<group>"; };
+		7702358E216CE69700B140ED /* DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DViewController.swift; sourceTree = "<group>"; };
+		77023597216CEDD700B140ED /* AViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AViewController.storyboard; sourceTree = "<group>"; };
+		77023599216CEE2000B140ED /* BViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BViewController.storyboard; sourceTree = "<group>"; };
+		7702359B216CEE2500B140ED /* CViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CViewController.storyboard; sourceTree = "<group>"; };
+		7702359D216CEE3200B140ED /* DViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DViewController.storyboard; sourceTree = "<group>"; };
+		7702359F216CEF6800B140ED /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		770235A1216CF40700B140ED /* TabItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabItemView.xib; sourceTree = "<group>"; };
+		770235A3216D12A400B140ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +119,13 @@
 		77023553216CE58900B140ED /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				77023582216CE60C00B140ED /* Controller */,
 				77023554216CE58900B140ED /* AppDelegate.swift */,
 				77023556216CE58900B140ED /* ViewController.swift */,
 				77023558216CE58900B140ED /* Main.storyboard */,
-				7702355B216CE58A00B140ED /* Assets.xcassets */,
 				7702355D216CE58A00B140ED /* LaunchScreen.storyboard */,
 				77023560216CE58A00B140ED /* Info.plist */,
+				770235A3216D12A400B140ED /* Assets.xcassets */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -123,6 +146,32 @@
 				77023576216CE58B00B140ED /* Info.plist */,
 			);
 			path = TabBarUITests;
+			sourceTree = "<group>";
+		};
+		77023582216CE60C00B140ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				77023585216CE64E00B140ED /* Main */,
+				77023588216CE67D00B140ED /* AViewController.swift */,
+				77023597216CEDD700B140ED /* AViewController.storyboard */,
+				7702358A216CE68400B140ED /* BViewController.swift */,
+				77023599216CEE2000B140ED /* BViewController.storyboard */,
+				7702358C216CE68B00B140ED /* CViewController.swift */,
+				7702359B216CEE2500B140ED /* CViewController.storyboard */,
+				7702358E216CE69700B140ED /* DViewController.swift */,
+				7702359D216CEE3200B140ED /* DViewController.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		77023585216CE64E00B140ED /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77023586216CE65E00B140ED /* MainViewController.swift */,
+				7702359F216CEF6800B140ED /* MainViewController.storyboard */,
+				770235A1216CF40700B140ED /* TabItemView.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +278,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770235A0216CEF6800B140ED /* MainViewController.storyboard in Resources */,
+				7702359C216CEE2500B140ED /* CViewController.storyboard in Resources */,
 				7702355F216CE58A00B140ED /* LaunchScreen.storyboard in Resources */,
-				7702355C216CE58A00B140ED /* Assets.xcassets in Resources */,
+				77023598216CEDD700B140ED /* AViewController.storyboard in Resources */,
+				7702359E216CEE3200B140ED /* DViewController.storyboard in Resources */,
+				7702359A216CEE2000B140ED /* BViewController.storyboard in Resources */,
 				7702355A216CE58900B140ED /* Main.storyboard in Resources */,
+				770235A4216D12A400B140ED /* Assets.xcassets in Resources */,
+				770235A2216CF40700B140ED /* TabItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77023589216CE67D00B140ED /* AViewController.swift in Sources */,
+				77023587216CE65E00B140ED /* MainViewController.swift in Sources */,
 				77023557216CE58900B140ED /* ViewController.swift in Sources */,
+				7702358B216CE68400B140ED /* BViewController.swift in Sources */,
+				7702358F216CE69700B140ED /* DViewController.swift in Sources */,
+				7702358D216CE68B00B140ED /* CViewController.swift in Sources */,
 				77023555216CE58900B140ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
