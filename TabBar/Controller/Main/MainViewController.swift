@@ -25,8 +25,9 @@ final class MainViewController: UIViewController {
     
     // MARK: Properties
     
-    // タブバーのデリゲート
+    /// タブバーのデリゲート
     var tabViewDelegate: TabViewDelegate?
+    /// コンテンツ内からのデリゲート
     var childTabDelegate: MainViewControllerChildTabDelegate?
     
     // コンテンツ表示中のViewController
@@ -35,17 +36,13 @@ final class MainViewController: UIViewController {
             // 画面を切り替えるため、表示中のViewControllerを削除して次のViewControllerを表示する
             
             // セットされているViewControllerがあれば削除
-            oldValue?.delegate = nil
-            oldValue?.willMove(toParent: nil)
-            oldValue?.view.removeFromSuperview()
-            oldValue?.removeFromParent()
+            oldValue?.clear()
             
             // 画面のを切り替える
-            currentViewController?.delegate = self
             guard let contentViewController = currentViewController else { return }
             addChild(contentViewController)
             contentViewController.didMove(toParent: self)
-            guard isViewLoaded else { return }
+            contentViewController.delegate = self
             contentViewController.view.frame = containerView.bounds
             containerView.addSubview(contentViewController.view)
         }

@@ -17,4 +17,11 @@ extension MainViewControllerChildTabDelegate where Self: UIViewController {
 
 class ContentViewController: UIViewController, MainViewControllerChildTabDelegate {
     var delegate: MainViewControllerChildTabDelegate?
+    
+    func clear() {
+        delegate = nil
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
 }
