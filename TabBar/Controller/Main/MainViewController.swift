@@ -71,10 +71,18 @@ final class MainViewController: UIViewController {
     
     // MARK: Private Function
     
-    // タブ選択状態の切り替え & 画面の切り替え
+    /// 表示コンテンツ切り替え
+    ///
+    /// - Parameter type: TabContentType
+    /// - Note: 選択したタブが表示中のものであればタブの階層トップに戻る
     private func switchContent(with type: TabContentType) {
         tabView.select(with: type)
-        currentNavigationViewController = viewControllers[type.rawValue]
+        
+        if let current = currentNavigationViewController, current.isEqual(viewControllers[type.rawValue]) {
+            currentNavigationViewController?.selectCurrentTab()
+        } else {
+            currentNavigationViewController = viewControllers[type.rawValue]
+        }
     }
 }
 

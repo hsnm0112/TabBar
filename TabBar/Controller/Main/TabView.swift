@@ -23,11 +23,7 @@ final class TabView: UIStackView {
             // StackViewに各タブを追加
             items.forEach { type in
                 let tabItemView = TabItemView.instantiate(with: type) { [weak self] type in
-                    // 各タブをタップした時の処理
-                    guard let strongSelf = self else { return }
-                    // 現在選択中のタブを再度選択した時は何もしない
-                    guard strongSelf.currentTab != type else { return }
-                    strongSelf.delegate?.didSelectTab(type: type)
+                    self?.delegate?.didSelectTab(type: type)
                 }
                 // TODO: タブのソート対応時にitem更新には対応出来ていない
                 addArrangedSubview(tabItemView)

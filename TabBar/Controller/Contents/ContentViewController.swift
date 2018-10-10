@@ -34,4 +34,9 @@ class ContentNavigationController: UINavigationController {
         super.viewDidLoad()
         navigationBar.barTintColor = .white
     }
+    
+    func selectCurrentTab() {
+        // Push遷移していたらトップ階層に戻る. トップ階層でスクロール可能なUIがあれば一番上に戻る等を行う
+        popToRootViewController(animated: true)
+    }
 }
