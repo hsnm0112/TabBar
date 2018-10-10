@@ -27,18 +27,21 @@ final class MainViewController: UIViewController {
     
     // タブバーのデリゲート
     var tabViewDelegate: TabViewDelegate?
+    var childTabDelegate: MainViewControllerChildTabDelegate?
     
     // コンテンツ表示中のViewController
-    var currentViewController: UIViewController? {
+    var currentViewController: ContentViewController? {
         didSet {
             // 画面を切り替えるため、表示中のViewControllerを削除して次のViewControllerを表示する
             
             // セットされているViewControllerがあれば削除
+            oldValue?.delegate = nil
             oldValue?.willMove(toParent: nil)
             oldValue?.view.removeFromSuperview()
             oldValue?.removeFromParent()
             
             // 画面のを切り替える
+            currentViewController?.delegate = self
             guard let contentViewController = currentViewController else { return }
             addChild(contentViewController)
             contentViewController.didMove(toParent: self)
@@ -72,7 +75,7 @@ final class MainViewController: UIViewController {
     // タブ選択状態の切り替え & 画面の切り替え
     private func switchContent(with type: TabContentType) {
         tabView.select(with: type)
-        currentViewController = viewControllers[type.rawValue]
+        currentViewController = viewControllers[type.rawValue] as? ContentViewController
     }
 }
 
@@ -81,6 +84,12 @@ extension MainViewController: TabViewDelegate {
     ///
     /// - Parameter type: TabContentType
     func didSelectTab(type: TabContentType) {
+        switchContent(with: type)
+    }
+}
+
+extension MainViewController: MainViewControllerChildTabDelegate {
+    func moveToTab(at type: TabContentType) {
         switchContent(with: type)
     }
 }

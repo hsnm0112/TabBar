@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DViewController: UIViewController {
+final class DViewController: ContentViewController {
     static func instantiate() -> DViewController {
         let viewController = UIStoryboard(name: "DViewController", bundle: nil).instantiateInitialViewController() as! DViewController
         return viewController

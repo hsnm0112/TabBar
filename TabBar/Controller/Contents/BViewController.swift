@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class BViewController: UIViewController {
+final class BViewController: ContentViewController {
     static func instantiate() -> BViewController {
         let viewController = UIStoryboard(name: "BViewController", bundle: nil).instantiateInitialViewController() as! BViewController
         return viewController

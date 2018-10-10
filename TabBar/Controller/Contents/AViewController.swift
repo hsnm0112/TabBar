@@ -8,10 +8,16 @@
 
 import UIKit
 
-final class AViewController: UIViewController {
+final class AViewController: ContentViewController {
+    
     static func instantiate() -> AViewController {
         let viewController = UIStoryboard(name: "AViewController", bundle: nil).instantiateInitialViewController() as! AViewController
         return viewController
+    }
+    
+    @IBAction func didTapMoveToCButton(_ sender: UIButton) {
+        // Cタブに遷移させる
+        delegate?.moveToTab(at: .c)
     }
     
     override func viewDidLoad() {

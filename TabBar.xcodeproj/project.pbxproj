@@ -27,6 +27,7 @@
 		770235A9216E311600B140ED /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770235A8216E311600B140ED /* TabItemView.swift */; };
 		770235AB216E315600B140ED /* TabContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770235AA216E315600B140ED /* TabContentType.swift */; };
 		770235AD216E318200B140ED /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770235AC216E318100B140ED /* MainNavigationController.swift */; };
+		770235AF216E398900B140ED /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770235AE216E398900B140ED /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		770235A8216E311600B140ED /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		770235AA216E315600B140ED /* TabContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentType.swift; sourceTree = "<group>"; };
 		770235AC216E318100B140ED /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		770235AE216E398900B140ED /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		770235A5216E309100B140ED /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				770235AE216E398900B140ED /* ContentViewController.swift */,
 				77023588216CE67D00B140ED /* AViewController.swift */,
 				77023597216CEDD700B140ED /* AViewController.storyboard */,
 				7702358A216CE68400B140ED /* BViewController.swift */,
@@ -332,6 +335,7 @@
 				7702358F216CE69700B140ED /* DViewController.swift in Sources */,
 				770235A7216E30E700B140ED /* TabView.swift in Sources */,
 				770235A9216E311600B140ED /* TabItemView.swift in Sources */,
+				770235AF216E398900B140ED /* ContentViewController.swift in Sources */,
 				7702358D216CE68B00B140ED /* CViewController.swift in Sources */,
 				77023555216CE58900B140ED /* AppDelegate.swift in Sources */,
 			);

@@ -24,10 +24,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6un-p3-0oB">
+                                <rect key="frame" x="16" y="603" width="343" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mex-Y9-HgB"/>
+                                </constraints>
+                                <state key="normal" title="Cに遷移"/>
+                                <connections>
+                                    <action selector="didTapMoveToCButton:" destination="zGk-sY-mGk" eventType="touchUpInside" id="tmA-hh-pNX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bNZ-cq-MJS" firstAttribute="leading" secondItem="ogv-Z8-roN" secondAttribute="leading" id="BKq-GT-adP"/>
+                            <constraint firstItem="ogv-Z8-roN" firstAttribute="trailing" secondItem="6un-p3-0oB" secondAttribute="trailing" constant="16" id="Ldt-b7-xDp"/>
+                            <constraint firstItem="6un-p3-0oB" firstAttribute="leading" secondItem="ogv-Z8-roN" secondAttribute="leading" constant="16" id="QjJ-gO-Mw5"/>
+                            <constraint firstItem="ogv-Z8-roN" firstAttribute="bottom" secondItem="6un-p3-0oB" secondAttribute="bottom" constant="20" id="eb6-Tl-bL9"/>
                             <constraint firstItem="bNZ-cq-MJS" firstAttribute="top" secondItem="ogv-Z8-roN" secondAttribute="top" id="eiX-6P-lun"/>
                             <constraint firstItem="bNZ-cq-MJS" firstAttribute="bottom" secondItem="ogv-Z8-roN" secondAttribute="bottom" id="oe5-eX-uf0"/>
                             <constraint firstItem="bNZ-cq-MJS" firstAttribute="trailing" secondItem="ogv-Z8-roN" secondAttribute="trailing" id="zUa-KN-Mf3"/>
