@@ -9,8 +9,8 @@
 import UIKit
 
 final class BViewController: ContentViewController {
-    static func instantiate() -> BViewController {
-        let viewController = UIStoryboard(name: "BViewController", bundle: nil).instantiateInitialViewController() as! BViewController
+    static func instantiateNavigationController() -> ContentNavigationController {
+        let viewController = UIStoryboard(name: "BViewController", bundle: nil).instantiateInitialViewController() as! ContentNavigationController
         return viewController
     }
     

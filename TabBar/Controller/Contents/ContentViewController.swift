@@ -20,8 +20,18 @@ class ContentViewController: UIViewController, MainViewControllerChildTabDelegat
     
     func clear() {
         delegate = nil
+    }
+}
+
+class ContentNavigationController: UINavigationController {
+    func remove() {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationBar.barTintColor = .white
     }
 }

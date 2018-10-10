@@ -12,8 +12,7 @@ final class MainNavigationController: UINavigationController {
     
     // MARK: Instantiate
     static func instantiate() -> MainNavigationController {
-        let mainViewController = MainViewController.instantiate()
-        let mainNavigationController = MainNavigationController(rootViewController: mainViewController)
+        let mainNavigationController = MainNavigationController()
         return mainNavigationController
     }
 }

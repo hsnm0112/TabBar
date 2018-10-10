@@ -31,28 +31,30 @@ final class MainViewController: UIViewController {
     var childTabDelegate: MainViewControllerChildTabDelegate?
     
     // コンテンツ表示中のViewController
-    var currentViewController: ContentViewController? {
+    var currentNavigationViewController: ContentNavigationController? {
         didSet {
-            // 画面を切り替えるため、表示中のViewControllerを削除して次のViewControllerを表示する
-            
-            // セットされているViewControllerがあれば削除
-            oldValue?.clear()
+            if let vc = oldValue?.topViewController as? ContentViewController {
+                vc.clear()
+            }
+            oldValue?.remove()
             
             // 画面のを切り替える
-            guard let contentViewController = currentViewController else { return }
-            addChild(contentViewController)
-            contentViewController.didMove(toParent: self)
-            contentViewController.delegate = self
-            contentViewController.view.frame = containerView.bounds
-            containerView.addSubview(contentViewController.view)
+            guard let currentNavigationViewController = currentNavigationViewController else { return }
+            addChild(currentNavigationViewController)
+            currentNavigationViewController.didMove(toParent: self)
+            if let vc = currentNavigationViewController.topViewController as? ContentViewController {
+                vc.delegate = self
+            }
+            currentNavigationViewController.view.frame = containerView.bounds
+            containerView.addSubview(currentNavigationViewController.view)
         }
     }
     
-    var viewControllers: [UIViewController] = [
-        AViewController.instantiate(),
-        BViewController.instantiate(),
-        CViewController.instantiate(),
-        DViewController.instantiate()
+    var viewControllers: [ContentNavigationController] = [
+        AViewController.instantiateNavigationController(),
+        BViewController.instantiateNavigationController(),
+        CViewController.instantiateNavigationController(),
+        DViewController.instantiateNavigationController()
     ]
     
     // MARK: Life Cycle
@@ -72,7 +74,7 @@ final class MainViewController: UIViewController {
     // タブ選択状態の切り替え & 画面の切り替え
     private func switchContent(with type: TabContentType) {
         tabView.select(with: type)
-        currentViewController = viewControllers[type.rawValue] as? ContentViewController
+        currentNavigationViewController = viewControllers[type.rawValue]
     }
 }
 
