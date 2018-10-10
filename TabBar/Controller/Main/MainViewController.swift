@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Lottie
 
 final class MainNavigationController: UINavigationController {
     
@@ -188,6 +189,12 @@ final class TabItemView: UIView {
         tabItemView.textLabel.textColor = type.tintColor
         tabItemView.imageView.image = type.image
         tabItemView.imageView.tintColor = type.tintColor
+        tabItemView.imageView.addSubview(tabItemView.animationView)
+        tabItemView.animationView.loopAnimation = false
+        tabItemView.animationView.frame = tabItemView.imageView.bounds
+        tabItemView.animationView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+        tabItemView.animationView.contentMode = .scaleAspectFit
+        tabItemView.animationView.animationSpeed = 1.5
         return tabItemView
     }
     
@@ -203,6 +210,7 @@ final class TabItemView: UIView {
     // MARK: Properties
     
     var tabContentType: TabContentType = .a
+    var animationView: LOTAnimationView = LOTAnimationView(name: "facebook_.json")
     
     // MARK: IBOutlet
     
@@ -212,18 +220,21 @@ final class TabItemView: UIView {
     // MARK: Function
     
     func update(with type: TabContentType) {
+        imageView.image = nil
         if tabContentType == type {
             // 選択状態にする
             textLabel.font = UIFont.boldSystemFont(ofSize: 12)
             textLabel.textColor = type.tintColor
-            imageView.tintColor = type.tintColor
-            imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            animationView.animationProgress = 0
+            animationView.play()
+            animationView.isHidden = false
+            animationView.tintColor = type.tintColor
         } else {
             // 非選択状態にする
             textLabel.font = UIFont.systemFont(ofSize: 10)
             textLabel.textColor = .darkGray
-            imageView.tintColor = .darkGray
-            imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            animationView.tintColor = .darkGray
+            animationView.animationProgress = 1
         }
     }
 }
