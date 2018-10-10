@@ -48,16 +48,23 @@ final class TabItemView: UIView {
     func update(with type: TabContentType) {
         if tabContentType == type {
             // 選択状態にする
-            textLabel.font = UIFont.boldSystemFont(ofSize: 12)
+            textLabel.font = UIFont.boldSystemFont(ofSize: 10)
             textLabel.textColor = type.tintColor
             imageView.tintColor = type.tintColor
-            imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            startAnimation()
         } else {
             // 非選択状態にする
             textLabel.font = UIFont.systemFont(ofSize: 10)
             textLabel.textColor = .darkGray
             imageView.tintColor = .darkGray
-            imageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         }
+    }
+    
+    private func startAnimation() {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.2, 0.9, 1.1, 1.0]
+        bounceAnimation.duration = 0.5
+        bounceAnimation.calculationMode = .cubic
+        imageView.layer.add(bounceAnimation, forKey: nil)
     }
 }
