@@ -76,7 +76,7 @@ final class MainViewController: UIViewController {
     /// - Parameter type: TabContentType
     /// - Note: 選択したタブが表示中のものであればタブの階層トップに戻る
     private func switchContent(with type: TabContentType) {
-        tabView.select(with: type)
+        tabView.select(type)
         
         if let current = currentNavigationViewController, current.isEqual(viewControllers[type.rawValue]) {
             currentNavigationViewController?.selectCurrentTab()

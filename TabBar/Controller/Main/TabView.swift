@@ -34,12 +34,11 @@ final class TabView: UIStackView {
     /// タブの選択状態を更新する
     ///
     /// - Parameter type: TabContentType
-    func select(with type: TabContentType) {
+    func select(_ type: TabContentType) {
         currentTab = type
         arrangedSubviews.forEach { view in
             guard let tabItemView = view as? TabItemView else { return }
-            // 種別を渡して各タブを活性 or 非活性状態に切り替える
-            tabItemView.update(with: type)
+            tabItemView.configure(type)
         }
     }
 }
