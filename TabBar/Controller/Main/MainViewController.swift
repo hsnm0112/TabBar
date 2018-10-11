@@ -66,17 +66,19 @@ final class MainViewController: UIViewController {
         // タブアイテムを配置
         tabView.items = [.a, .b, .c, .d]
         // 指定のメイン画面を表示
-        switchContent(with: .b)
+        switchContent(with: .b, animated: false)
     }
     
     // MARK: Private Function
     
     /// 表示コンテンツ切り替え
     ///
-    /// - Parameter type: TabContentType
+    /// - Parameters:
+    ///   - type: TabContentType
+    ///   - animated: Bool
     /// - Note: 選択したタブが表示中のものであればタブの階層トップに戻る
-    private func switchContent(with type: TabContentType) {
-        tabView.select(type)
+    private func switchContent(with type: TabContentType, animated: Bool) {
+        tabView.select(type, animated: animated)
         
         if let current = currentNavigationViewController, current.isEqual(viewControllers[type.rawValue]) {
             currentNavigationViewController?.selectCurrentTab()
@@ -91,12 +93,12 @@ extension MainViewController: TabViewDelegate {
     ///
     /// - Parameter type: TabContentType
     func didSelectTab(type: TabContentType) {
-        switchContent(with: type)
+        switchContent(with: type, animated: true)
     }
 }
 
 extension MainViewController: MainViewControllerChildTabDelegate {
     func moveToTab(at type: TabContentType) {
-        switchContent(with: type)
+        switchContent(with: type, animated: true)
     }
 }

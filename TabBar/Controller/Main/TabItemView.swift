@@ -58,13 +58,15 @@ final class TabItemView: UIView {
     
     // MARK: - Function
     
-    func configure(_ type: TabContentType) {
+    func configure(_ type: TabContentType, animated: Bool) {
         if tabContentType == type {
             // 選択状態にする
             textLabel.font = UIFont.boldSystemFont(ofSize: 10)
             textLabel.textColor = type.tintColor
             imageView.tintColor = type.tintColor
-            playImageAnimation(.bounce)
+            if animated {
+                playImageAnimation(.bounce)
+            }
         } else {
             // 非選択状態にする
             textLabel.font = UIFont.systemFont(ofSize: 10)

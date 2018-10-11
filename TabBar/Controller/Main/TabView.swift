@@ -33,12 +33,13 @@ final class TabView: UIStackView {
     
     /// タブの選択状態を更新する
     ///
-    /// - Parameter type: TabContentType
-    func select(_ type: TabContentType) {
+    ///   - type: TabContentType
+    ///   - animated: Bool
+    func select(_ type: TabContentType, animated: Bool) {
         currentTab = type
         arrangedSubviews.forEach { view in
             guard let tabItemView = view as? TabItemView else { return }
-            tabItemView.configure(type)
+            tabItemView.configure(type, animated: animated)
         }
     }
 }
