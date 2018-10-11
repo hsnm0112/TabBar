@@ -9,6 +9,7 @@
 import UIKit
 
 protocol TabViewDelegate {
+    /// タブ選択時にコール
     func didSelectTab(type: TabContentType)
 }
 
@@ -16,16 +17,12 @@ final class TabView: UIStackView {
     
     var delegate: TabViewDelegate?
     
-    var currentTab: TabContentType = .a
-    
     var items: [TabContentType] = [] {
         didSet {
-            // StackViewに各タブを追加
             items.forEach { type in
                 let tabItemView = TabItemView.instantiate(with: type) { [weak self] type in
                     self?.delegate?.didSelectTab(type: type)
                 }
-                // TODO: タブのソート対応時にitem更新には対応出来ていない
                 addArrangedSubview(tabItemView)
             }
         }
@@ -36,7 +33,6 @@ final class TabView: UIStackView {
     ///   - type: TabContentType
     ///   - animated: Bool
     func select(_ type: TabContentType, animated: Bool) {
-        currentTab = type
         arrangedSubviews.forEach { view in
             guard let tabItemView = view as? TabItemView else { return }
             tabItemView.configure(type, animated: animated)
