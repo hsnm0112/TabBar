@@ -30,17 +30,13 @@ final class TabItemView: UIView {
     typealias TapHandler = (TabContentType) -> Void
     var tapHandler: TapHandler?
     @objc func tapped(_ sender: UITapGestureRecognizer) {
-        // 連続タップ防止でアニメーション中はタップ検知させない
-        guard !isTapAnimationg else { return }
-        isTapAnimationg = true
         tapHandler?(tabContentType)
     }
     
     // MARK: - Properties
     
     var tabContentType: TabContentType = .a
-    var isTapAnimationg = false
-    
+
     // MARK: - IBOutlet
     
     @IBOutlet private weak var imageView: UIImageView!
@@ -51,29 +47,13 @@ final class TabItemView: UIView {
     /// タッチ開始時
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        guard !isTapAnimationg else { return }
-        // ちょっと表示を縮小する
-        UIView.animate(withDuration: 0.2) {
-            self.imageView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-        }
-    }
-    
-    /// タッチキャンセル時(タッチ中に電話アプリ等の別アプリから中断されたとき)
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        // 縮小を戻す
-        UIView.animate(withDuration: 0.2) {
-            self.imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }
+        playImageAnimation(.tapping)
     }
     
     /// タッチ終了時
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        // 縮小を戻す
-        UIView.animate(withDuration: 0.2) {
-            self.imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }
+        playImageAnimation(.cancel)
     }
     
     // MARK: - Function
@@ -84,8 +64,7 @@ final class TabItemView: UIView {
             textLabel.font = UIFont.boldSystemFont(ofSize: 10)
             textLabel.textColor = type.tintColor
             imageView.tintColor = type.tintColor
-            playTapImageAnimation()
-            
+            playImageAnimation(.bounce)
         } else {
             // 非選択状態にする
             textLabel.font = UIFont.systemFont(ofSize: 10)
@@ -96,15 +75,42 @@ final class TabItemView: UIView {
     
     // MARK: - Private Function
     
-    /// イメージのタップアニメーションを開始
-    private func playTapImageAnimation() {
-        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        bounceAnimation.values = [0.85, 1.1, 0.95, 1.0]
-        bounceAnimation.duration = 0.4
-        bounceAnimation.calculationMode = .cubic
-        imageView.layer.add(bounceAnimation, forKey: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.isTapAnimationg = false
+    private enum AnimationType {
+        case tapping
+        case cancel
+        case bounce
+        
+        var values: [Float] {
+            switch self {
+            case .tapping:
+                return [1.0, 0.85]
+            case .cancel:
+                return [0.85, 1.0]
+            case .bounce:
+                return [0.85, 1.1, 0.95, 1.0]
+            }
         }
+        
+        var duration: CFTimeInterval {
+            switch self {
+            case .tapping:
+                return 0.1
+            case .cancel:
+                return 0.1
+            case .bounce:
+                return 0.4
+            }
+        }
+    }
+    
+    /// イメージのタップアニメーションを開始
+    private func playImageAnimation(_ animationType: AnimationType) {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = animationType.values
+        bounceAnimation.duration = animationType.duration
+        bounceAnimation.calculationMode = .cubic
+        bounceAnimation.isRemovedOnCompletion = false
+        bounceAnimation.fillMode = .forwards
+        imageView.layer.add(bounceAnimation, forKey: nil)
     }
 }
