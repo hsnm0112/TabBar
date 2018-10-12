@@ -30,9 +30,9 @@ class ContentViewController: UIViewController, MainViewControllerChildTabDelegat
 
 class ContentNavigationController: UINavigationController {
     func remove() {
-        willMove(toParent: nil)
+        willMove(toParentViewController: nil)
         view.removeFromSuperview()
-        removeFromParent()
+        removeFromParentViewController()
     }
     
     override func viewDidLoad() {

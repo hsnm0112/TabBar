@@ -40,8 +40,8 @@ final class MainViewController: UIViewController {
             
             // 画面のを切り替える
             guard let currentNavigationViewController = currentNavigationViewController else { return }
-            addChild(currentNavigationViewController)
-            currentNavigationViewController.didMove(toParent: self)
+            addChildViewController(currentNavigationViewController)
+            currentNavigationViewController.didMove(toParentViewController: self)
             if let vc = currentNavigationViewController.topViewController as? ContentViewController {
                 vc.delegate = self
             }

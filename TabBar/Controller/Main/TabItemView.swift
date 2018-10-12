@@ -110,9 +110,9 @@ final class TabItemView: UIView {
         let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         bounceAnimation.values = animationType.values
         bounceAnimation.duration = animationType.duration
-        bounceAnimation.calculationMode = .cubic
+        bounceAnimation.calculationMode = kCAAnimationCubic
         bounceAnimation.isRemovedOnCompletion = false
-        bounceAnimation.fillMode = .forwards
+        bounceAnimation.fillMode = kCAFillModeForwards
         imageView.layer.add(bounceAnimation, forKey: nil)
     }
 }
